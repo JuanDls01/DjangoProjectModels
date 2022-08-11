@@ -2,6 +2,8 @@
 
 Este proyecto tiene como objetivo practicar lo aprendido en OpenBootcamp (https://open-bootcamp.com/), sobre creación de modelos haciendo uso del framework Django y el lenguaje Python, y al mismo tiempo servir de guía para aquellos desarrolladores que también están interesados en practicar y aprender sobre estas tecnologías.
 
+Se trata de un proyecto que contiene una aplicación para la gestión de empleados en una compañía.
+
 Cabe destacar que es un proyecto bastante sencillo y relativamente básico por lo que si eres un desarrollador avanzado en este entorno quizás no te sea de tanta utilidad.
 
 # Pasos a seguir
@@ -28,19 +30,20 @@ $ pip install Django
 
 ## Inicializamos el proyecto
 
-- En primer lugar debemos iniciar el proyecto (models_project), para ello escribimos el siguiente comando en consola:
+- En primer lugar debemos iniciar el proyecto (models_project), para ello escribimos lo siguiente en la terminal:
 
 ```bash
 $ django-admin startproject models_project
 ```
 
-- Posteriormente debemos crear una aplicación que llamaremos company y la que contendrá los modelos y rutas necesarias para implementar las funcionalidades y que quede todo ordenado y modularizado.
+- Posteriormente debemos crear una aplicación que llamaremos company, la cual contendrá los modelos y rutas necesarias para implementar las funcionalidades relacionadas a la gestión de usuarios de la compañía. Trabajar con aplicaciones nos permite modularizar para que si quisieramos trabajar en otro proyecto con una aplicación similar de gestión de usuarios, nos permita copiar esta misma y hacerle pequeñas modificaciones. Además nos permite trabajar de una manera mucho más ordenada y mantenible
 
 ```bash
+$ cd models_project
 $ python manage.py startapp company
 ```
 
-- Debemos incorporar a nuestro settings.py de models_project la aplicación company como se muestra a continuación:
+- Incorporamos en el settings.py de nuestro proyecto la aplicación company dentro de las aplicaciones instaladas, como se muestra a continuación:
 
 ```Python
 # Application definition
@@ -64,9 +67,9 @@ $ python manage.py check company # System check identified no issues (0 silenced
 
 ## Creamos la Base de Datos:
 
-- En este proyecto utilizaremos PostgreSQL como sistema de permanencia de datos. Para configurar la conexión a la misma debemos dirigirnos al settings.py de nuestro proyecto para configurar las variables de entorno (Documentación: https://docs.djangoproject.com/en/4.1/ref/databases/)
+- En este proyecto utilizaremos PostgreSQL como sistema de permanencia de datos. Para configurar la conexión a la misma debemos dirigirnos nuevamente a settings.py para configurar las variables de entorno (Documentación: https://docs.djangoproject.com/en/4.1/ref/databases/)
 
-Creamos un archivo .env en la raíz del proyecto y donde colocaremos las variables de entorno para luego llamarlas dentro de settings.py
+Creamos un archivo .env en la raíz del proyecto, donde colocaremos las variables de entorno para luego llamarlas dentro de settings.py
 
 ```bash
 # Settings.py
@@ -89,9 +92,10 @@ DATABASES = {
 }
 # -----------------------------
 # .env:
+SECRET_KEY='******'
 DB_NAME='company',
 DB_USER='postgres',
-DB_PASSWORD = '********',
+DB_PASSWORD='********',
 ```
 
 - Vinculamos la BD con nuestro proyecto en django:
@@ -103,6 +107,7 @@ $ python manage.py migrate
 Para este punto deberíamos poder ver en PgAdmin las bases de datos creadas por defecto por Django:
 
 <img src='./public/defaultBD.png'>
+
 
 ## Creamos los modelos
 
@@ -134,6 +139,6 @@ $ python manage.py migrate
 #   Applying company.0001_initial...←[32;1m OK←[0m
 ```
 
-# Estructura de la Base de Datos:
+## Estructura de la Base de Datos:
 
 <img src='https://raw.githubusercontent.com/JuanDls01/ModelsProjectDjango/main/public/ModelsDjango.drawio.png' height="300px" width="530px">
