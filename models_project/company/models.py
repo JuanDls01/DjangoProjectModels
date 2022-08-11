@@ -21,7 +21,7 @@ class Job(models.Model):
         self.title
 
 
-class Country(models.model):
+class Country(models.Model):
     name = models.CharField(max_length=30, null=False, blank=False)
     country_code = models.CharField(max_length=6, blank=False, null=False)
 

@@ -110,6 +110,30 @@ Para este punto deberíamos poder ver en PgAdmin las bases de datos creadas por 
 
 - Luego de crear las clases debemos relacionar dichos modelos, haciendo uso de claves foraneas.
 
+- Comprobamos que las migraciones ocurren de manera correcta a través de la migración de los modelos:
+
+```bash
+$ python manage.py makemigrations
+# config django-insecure-=4atx&+8wp45!%884vf5u70p7_ufv(5go7p#c)4mees_qby9r1
+# ←[36;1mMigrations for 'company':←[0m
+#   ←[1mcompany\migrations\0001_initial.py←[0m
+#     - Create model Country
+#     - Create model Location
+#     - Create model Salary
+#     - Create model Place
+#     - Create model Job
+#     - Create model Employee
+```
+
+```bash
+$ python manage.py migrate
+# config django-insecure-=4atx&+8wp45!%884vf5u70p7_ufv(5go7p#c)4mees_qby9r1
+# ←[36;1mOperations to perform:←[0m
+# ←[1m  Apply all migrations: ←[0madmin, auth, company, contenttypes, sessions
+# ←[36;1mRunning migrations:←[0m
+#   Applying company.0001_initial...←[32;1m OK←[0m
+```
+
 # Estructura de la Base de Datos:
 
 <img src='https://raw.githubusercontent.com/JuanDls01/ModelsProjectDjango/main/public/ModelsDjango.drawio.png' height="300px" width="530px">
