@@ -62,7 +62,6 @@ INSTALLED_APPS = [
 $ python manage.py check company # System check identified no issues (0 silenced).
 ```
 
-
 ## Creamos la Base de Datos:
 
 - En este proyecto utilizaremos PostgreSQL como sistema de permanencia de datos. Para configurar la conexión a la misma debemos dirigirnos al settings.py de nuestro proyecto para configurar las variables de entorno (Documentación: https://docs.djangoproject.com/en/4.1/ref/databases/)
@@ -104,6 +103,12 @@ $ python manage.py migrate
 Para este punto deberíamos poder ver en PgAdmin las bases de datos creadas por defecto por Django:
 
 <img src='./public/defaultBD.png'>
+
+## Creamos los modelos
+
+- Nos dirigimos a la aplicación company y allí creamos un archivo models.py, donde escribiremos las clases que seran nuestros modelos.
+
+- Luego de crear las clases debemos relacionar dichos modelos, haciendo uso de claves foraneas.
 
 # Estructura de la Base de Datos:
 
