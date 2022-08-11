@@ -31,13 +31,13 @@ $ pip install Django
 - En primer lugar debemos iniciar el proyecto (models_project), para ello escribimos el siguiente comando en consola:
 
 ```bash
-django-admin startproject models_project
+$ django-admin startproject models_project
 ```
 
 - Posteriormente debemos crear una aplicación que llamaremos company y la que contendrá los modelos y rutas necesarias para implementar las funcionalidades y que quede todo ordenado y modularizado.
 
 ```bash
-python manage.py startapp company
+$ python manage.py startapp company
 ```
 
 - Debemos incorporar a nuestro settings.py de models_project la aplicación company como se muestra a continuación:
@@ -59,16 +59,11 @@ INSTALLED_APPS = [
 - Podemos corroborar que ha sido instalada correctamente con el siguiente comando:
 
 ```bash
-python manage.py check company
+$ python manage.py check company # System check identified no issues (0 silenced).
 ```
 
-Debería devolvernos lo siguiente:
 
-```bash
-System check identified no issues (0 silenced).
-```
-
-# Creamos la Base de Datos:
+## Creamos la Base de Datos:
 
 - En este proyecto utilizaremos PostgreSQL como sistema de permanencia de datos. Para configurar la conexión a la misma debemos dirigirnos al settings.py de nuestro proyecto para configurar las variables de entorno (Documentación: https://docs.djangoproject.com/en/4.1/ref/databases/)
 
@@ -103,7 +98,7 @@ DB_PASSWORD = '********',
 - Vinculamos la BD con nuestro proyecto en django:
 
 ```bash
-python manage.py migrate
+$ python manage.py migrate
 ```
 
 Para este punto deberíamos poder ver en PgAdmin las bases de datos creadas por defecto por Django:
