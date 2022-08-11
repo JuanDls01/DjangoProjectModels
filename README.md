@@ -1,8 +1,6 @@
-# ModelsProjectDjango
+# Models Project (Django)
 
-Este proyecto tiene como objetivo practicar lo aprendido en OpenBootcamp (https://open-bootcamp.com/), sobre creación de modelos haciendo uso del framework Django y el lenguaje Python, y al mismo tiempo servir de guía para aquellos desarrolladores que también están interesados en practicar y aprender sobre estas tecnologías.
-
-Se trata de un proyecto que contiene una aplicación para la gestión de empleados en una compañía.
+Este es un pequeño proyecto realizado para practicar y fortalecer los conocimientos adquiridos en el curso de Django de OpenBootcamp (https://open-bootcamp.com/). En el mismo trabajamos una aplicación que contiene los modelos asociados a la gestión de empleados en una compañía. Para ello crearemos un entorno virual, un proyecto y una aplicación en Django, lo conectaremos a PostgreSQL con variables de entorno, crearemos los modelos correspondientes y por último deberemos migrar estos modelos de la aplicación al proyecto.
 
 Cabe destacar que es un proyecto bastante sencillo y relativamente básico por lo que si eres un desarrollador avanzado en este entorno quizás no te sea de tanta utilidad.
 
@@ -107,7 +105,6 @@ $ python manage.py migrate
 Para este punto deberíamos poder ver en PgAdmin las bases de datos creadas por defecto por Django:
 
 <img src='./public/defaultBD.png'>
-
 
 ## Creamos los modelos
 
